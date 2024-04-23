@@ -1,0 +1,94 @@
+1. Do npm install
+2. npm run dev
+   2.1 if got mongodb error even if you have mongodb then go to .env file and changed
+   DATABASE_URL='mongodb://localhost:27017/college-management' with DATABASE_URL='mongodb://127.0.0.1:27017/college-management'
+
+   2.2 If you are using react native then do a call using using laptop ip address
+   like here we use "http://localhost:8000/api/students" instead use "http://192.168.X.X:8000/api/students" where X.X are IP of your PC
+
+3. Get all students
+   Get API:"http://localhost:8000/api/students/"
+
+4. Get all staff
+   Get API:"http://localhost:8000/api/staffs/"
+
+5. Get all roles
+   Get API:"http://localhost:8000/api/roles/"
+
+6. Post new role
+   Post API:"http://localhost:8000/api/roles/"
+   Data:{
+   "name":"student",
+   "permissions":["READ_COURSE","READ_SUBJECT","READ_CLASS","READ_DEPARTMENT"]
+   }
+
+7. Get all classes
+   Get API:"http://localhost:8000/api/classes/"
+
+8. Post new classes
+   Post API:"http://localhost:8000/api/classes/"
+   Data:{
+   "name":"MCA 1st Year"
+   }
+
+9. Post new department
+   Post API:"http://localhost:8000/api/department/"
+   Data:{
+   "name":"MCA",
+   "classId":"661e3c359b12350587878f47"
+   }
+
+10. Get all department
+    Get API:"http://localhost:8000/api/department/"
+
+11. post Student
+    Post API:"http://localhost:8000/api/students/"
+    data:{
+    "name":"Saurabh",
+    "email":"saurabh@demo.com",
+    "password":"1234",
+    "role":"661e2b30b0acb9d80012f312",
+    "phone":1234567890,
+    "address":"demo address testing",
+    "gender":"Male",
+    "dateOfBirth":"Tue Apr 16 2024 16:07:33 GMT+0530",
+    "class": "661e3c359b12350587878f47",
+    "department":"661e44bb5d5a380031474fe1"
+    }
+
+12. Post StaffType
+    Post API: "http://localhost:8000/api/staffs/type"
+    data:{
+     "title":"Principal"
+    }
+
+13. Get all StaffType
+    Get API:"http://localhost:8000/api/staffs/type"
+
+14. Post Staff
+    Post API:"http://localhost:8000/api/staffs/"
+    data:{
+    	"name":"Saurabh",
+		"email":"saurabhj@demo.com",
+		"password":"1234",
+		"role":"661f69f9fd78f6d78a133a4b",
+		"phone":"0987654321",
+		"address":"Testing lorem",
+		"gender":"Male",
+		"dateOfBirth":"Wed Apr 17 2024 11:41:15 GMT+0530",
+		"joiningDate":"Wed Apr 17 2024 11:41:15 GMT+0530",
+		"HOD":false,
+		"department":"661e44bb5d5a380031474fe1",
+		"classTeacherOf":"661e3c359b12350587878f47", //classId
+		"subject":"661e4d38930d5b2fad530629",
+		"employeeType":"661f6639c6716c4253a0b1d9"
+    }
+
+15. Post Subject 
+    Post API:"http://localhost:8000/api/subject/"
+    data:{
+    "name":"Maths"
+    }  
+
+16. Get Subject
+    Get API:"http://localhost:8000/api/subject/"
