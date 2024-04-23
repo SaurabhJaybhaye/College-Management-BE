@@ -1,94 +1,144 @@
-1. Do npm install
-2. npm run dev
-   2.1 if got mongodb error even if you have mongodb then go to .env file and changed
-   DATABASE_URL='mongodb://localhost:27017/college-management' with DATABASE_URL='mongodb://127.0.0.1:27017/college-management'
+1. **Do npm install**
 
-   2.2 If you are using react native then do a call using using laptop ip address
-   like here we use "http://localhost:8000/api/students" instead use "http://192.168.X.X:8000/api/students" where X.X are IP of your PC
+2. **npm run dev**
 
-3. Get all students
-   Get API:"http://localhost:8000/api/students/"
+   - 2.1 If you encounter a MongoDB error despite having MongoDB installed, navigate to the `.env` file and change `DATABASE_URL='mongodb://localhost:27017/college-management'` to `DATABASE_URL='mongodb://127.0.0.1:27017/college-management'`.
 
-4. Get all staff
-   Get API:"http://localhost:8000/api/staffs/"
+   - 2.2 If you are using React Native, make API calls using your laptop's IP address. For example, instead of using "http://localhost:8000/api/students", use "http://192.168.X.X:8000/api/students", where X.X represents your PC's IP address.
 
-5. Get all roles
-   Get API:"http://localhost:8000/api/roles/"
+3. **Get all roles**
 
-6. Post new role
-   Post API:"http://localhost:8000/api/roles/"
-   Data:{
-   "name":"student",
-   "permissions":["READ_COURSE","READ_SUBJECT","READ_CLASS","READ_DEPARTMENT"]
-   }
+   - Get API: "http://localhost:8000/api/roles/"
 
-7. Get all classes
-   Get API:"http://localhost:8000/api/classes/"
+4. **Post new role**
 
-8. Post new classes
-   Post API:"http://localhost:8000/api/classes/"
-   Data:{
-   "name":"MCA 1st Year"
-   }
+   - Post API: "http://localhost:8000/api/roles/"
+   - Data:
+     ```json
+     {
+       "name": "student",
+       "permissions": [
+         "READ_COURSE",
+         "READ_SUBJECT",
+         "READ_CLASS",
+         "READ_DEPARTMENT"
+       ]
+     }
+     ```
 
-9. Post new department
-   Post API:"http://localhost:8000/api/department/"
-   Data:{
-   "name":"MCA",
-   "classId":"661e3c359b12350587878f47"
-   }
+5. **Get all classes**
 
-10. Get all department
-    Get API:"http://localhost:8000/api/department/"
+   - Get API: "http://localhost:8000/api/classes/"
 
-11. post Student
-    Post API:"http://localhost:8000/api/students/"
-    data:{
-    "name":"Saurabh",
-    "email":"saurabh@demo.com",
-    "password":"1234",
-    "role":"661e2b30b0acb9d80012f312",
-    "phone":1234567890,
-    "address":"demo address testing",
-    "gender":"Male",
-    "dateOfBirth":"Tue Apr 16 2024 16:07:33 GMT+0530",
-    "class": "661e3c359b12350587878f47",
-    "department":"661e44bb5d5a380031474fe1"
-    }
+6. **Post new classes**
 
-12. Post StaffType
-    Post API: "http://localhost:8000/api/staffs/type"
-    data:{
-     "title":"Principal"
-    }
+   - Post API: "http://localhost:8000/api/classes/"
+   - Data:
+     ```json
+     {
+       "name": "MCA 1st Year"
+     }
+     ```
 
-13. Get all StaffType
-    Get API:"http://localhost:8000/api/staffs/type"
+7. **Post new department**
 
-14. Post Staff
-    Post API:"http://localhost:8000/api/staffs/"
-    data:{
-    	"name":"Saurabh",
-		"email":"saurabhj@demo.com",
-		"password":"1234",
-		"role":"661f69f9fd78f6d78a133a4b",
-		"phone":"0987654321",
-		"address":"Testing lorem",
-		"gender":"Male",
-		"dateOfBirth":"Wed Apr 17 2024 11:41:15 GMT+0530",
-		"joiningDate":"Wed Apr 17 2024 11:41:15 GMT+0530",
-		"HOD":false,
-		"department":"661e44bb5d5a380031474fe1",
-		"classTeacherOf":"661e3c359b12350587878f47", //classId
-		"subject":"661e4d38930d5b2fad530629",
-		"employeeType":"661f6639c6716c4253a0b1d9"
-    }
+   - Post API: "http://localhost:8000/api/department/"
+   - Data:
+     ```json
+     {
+       "name": "MCA",
+       "classId": "661e3c359b12350587878f47"
+     }
+     ```
 
-15. Post Subject 
-    Post API:"http://localhost:8000/api/subject/"
-    data:{
-    "name":"Maths"
-    }  
+8. **Get all department**
 
-16. Get Subject
-    Get API:"http://localhost:8000/api/subject/"
+   - Get API: "http://localhost:8000/api/department/"
+
+9. **Post StaffType**
+
+   - Post API: "http://localhost:8000/api/staffs/type"
+   - Data:
+     ```json
+     {
+       "title": "Principal"
+     }
+     ```
+
+10. **Get all StaffType**
+
+    - Get API: "http://localhost:8000/api/staffs/type"
+
+11. **Post Subject**
+
+    - Post API: "http://localhost:8000/api/subject/"
+    - Data:
+      ```json
+      {
+        "name": "Maths"
+      }
+      ```
+
+12. **Get Subject**
+
+    - Get API: "http://localhost:8000/api/subject/"
+
+13. **Post new student**
+
+    - Post API: "http://localhost:8000/api/students/"
+    - Data:
+      ```json
+      {
+        "name": "Saurabh",
+        "email": "saurabh@demo.com",
+        "password": "1234",
+        "role": "661e2b30b0acb9d80012f312",
+        "phone": 1234567890,
+        "address": "demo address testing",
+        "gender": "Male",
+        "dateOfBirth": "Tue Apr 16 2024 16:07:33 GMT+0530",
+        "class": "661e3c359b12350587878f47",
+        "department": "661e44bb5d5a380031474fe1"
+      }
+      ```
+
+14. **Post new staff**
+
+    - Post API: "http://localhost:8000/api/staffs/"
+    - Data:
+      ```json
+      {
+        "name": "Saurabh",
+        "email": "saurabhj@demo.com",
+        "password": "1234",
+        "role": "661f69f9fd78f6d78a133a4b",
+        "phone": "0987654321",
+        "address": "Testing lorem",
+        "gender": "Male",
+        "dateOfBirth": "Wed Apr 17 2024 11:41:15 GMT+0530",
+        "joiningDate": "Wed Apr 17 2024 11:41:15 GMT+0530",
+        "HOD": false,
+        "department": "661e44bb5d5a380031474fe1",
+        "classTeacherOf": "661e3c359b12350587878f47",
+        "subject": "661e4d38930d5b2fad530629",
+        "employeeType": "661f6639c6716c4253a0b1d9"
+      }
+      ```
+
+15. **Login**
+
+    - Post API: "http://localhost:8000/api/login"
+    - Data:
+      ```json
+      {
+        "email": "saurabhj@demo.com",
+        "password": "1234"
+      }
+      ```
+
+16. **Get all students**
+
+    - Get API: "http://localhost:8000/api/students/"
+
+17. **Get all staff**
+    - Get API: "http://localhost:8000/api/staffs/"
