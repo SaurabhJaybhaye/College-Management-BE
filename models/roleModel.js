@@ -6,11 +6,6 @@ const roleSchema = new mongoose.Schema({
 		required: true,
 		unique: true,
 	},
-	roleId: {
-		type: String,
-		required: true,
-		unique: true,
-	},
 
 	permissions: {
 		type: [String],

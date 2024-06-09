@@ -6,11 +6,6 @@ const subjectSchema = new mongoose.Schema({
 		required: true,
 		unique: true,
 	},
-	subjectId: {
-		type: String,
-		required: true,
-		unique: true,
-	},
 });
 
 const Subject = mongoose.model("Subject", subjectSchema);

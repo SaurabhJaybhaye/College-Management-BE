@@ -6,6 +6,9 @@ const studentSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	image: {
+		type: String,
+	},
 	email: {
 		type: String,
 		required: true,
@@ -52,7 +55,7 @@ const studentSchema = new mongoose.Schema({
 		ref: "Course",
 	},
 	department: {
-		type: mongoose.Schema.Types.ObjectId,
+		type: mongoose.Schema.Types.ObjectId	,
 		ref: "Department",
 	},
 });

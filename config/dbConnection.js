@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const { MESSAGES, ERROR_MESSAGES } = require("../constants/errorConstants");
+const { MESSAGES, ERROR_TITLES } = require("../constants/errorConstants");
+const seedDatabase = require("./seedDatabase");
 const connectDb = async () => {
 	// MongoDB connection URL
 	const dbURI = process.env.DATABASE_URL;
@@ -12,8 +13,10 @@ const connectDb = async () => {
 			connect.connection.host,
 			connect.connection.name
 		);
+
+		await seedDatabase();
 	} catch (error) {
-		console.error(ERROR_MESSAGES.DB_CONNECTION_FAILS, error);
+		console.error(ERROR_TITLES.DB_CONNECTION_FAILS, error);
 	}
 };
 

@@ -1,4 +1,4 @@
-const Staff = require("../models/staffModel");
+const Employee = require("../models/employeeModel");
 const Student = require("../models/studentModel");
 const asyncHandler = require("express-async-handler");
 const jwt = require("jsonwebtoken");
@@ -16,7 +16,7 @@ const loginUser = asyncHandler(async (req, resp) => {
 	let user = await Student.findOne({ email }).populate("role");
 
 	if (!user) {
-		user = await Staff.findOne({ email }).populate("role");
+		user = await Employee.findOne({ email }).populate("role");
 	}
 
 	if (user && user.password === password) {

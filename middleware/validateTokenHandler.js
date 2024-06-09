@@ -3,7 +3,7 @@ const { ERROR_TITLES } = require("../constants/errorConstants");
 const asyncHandler = require("express-async-handler");
 const jwt = require("jsonwebtoken");
 
-const validateToken = asyncHandler(async (req, resp, next) => {
+const validateToken = asyncHandler(async (params, req, resp, next) => {
 	let token;
 	let authHeader = req.headers.authorization || req.headers.Authorization;
 	if (authHeader && authHeader.startsWith("Bearer")) {
@@ -14,6 +14,12 @@ const validateToken = asyncHandler(async (req, resp, next) => {
 				resp.status(401).json({ error: ERROR_TITLES.UNAUTHORIZED_TOKEN });
 			}
 			req.user = decoded.user;
+			const user_has_permissions =
+				req.user.role.permissions.includes(params) ||
+				req.user.role.permissions.includes("*");
+			if (!user_has_permissions) {
+				resp.status(403).json({ error: ERROR_TITLES.FORBIDDEN });
+			}
 			next();
 		});
 	}
